@@ -1,0 +1,9 @@
+anon_mmap
+anon_mmap.c
+lab5_tasks
+mcat
+mcat.c
+mmap
+mmap.c
+writer-reader
+Լաբորատոր աշխատանք 5.pdf
