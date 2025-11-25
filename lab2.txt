@@ -1,0 +1,2 @@
+Message from main()
+t1 matches with thread id
