@@ -19,3 +19,42 @@ every 5 minutes
 
 */5 * * * * /usr/bin/python3 /home/toxoplasma/my_service/monitor.py
 
+
+log redirection
+
+*/5 * * * * /usr/bin/python3 /home/toxoplasma/my_service/monitor.py >> /home/toxoplasma/my_service/cron_debug.log 2>&1
+
+2>&1 (stderr >> file)
+
+*/10 * * * * every 10 minutes
+0 */2 * * * every 2 hours
+
+@reboot
+
+@reboot /home/toxoplasma/my_service/run_monitor.sh
+@hourly /home/toxoplasma/my_service/cleanup_logs.sh
+
+cron logs
+grep CRON /var/log/syslog
+
+
+crontab -e
+(там выбираешь редактор типо 1 nano или vi)
+
+это пишешь там и сохраняешь
+
+первая группа символов это шаблон для события второая команда второй аргумента команды
+в нашем случае каждые пять минут запустить через пайтн который находится в конкретной папке скрипт из конкретной папки наш логер системы то есть
+
+*/5 * * * * /usr/bin/python3 /home/user/my_service/monitor.py >> /home/user/my_service/cron_debug.log 2>&1
+
+
+
+эта штуковина для проверки всех задании типо какие активны
+
+
+crontab -l
+
+это когда какой то хацкер скрипткидди добавил тебе в систему задачу с майнером и ты тупой и тебе нужно удалить все задачи
+удаляешь через эту команду убивая расписание
+crontab -r

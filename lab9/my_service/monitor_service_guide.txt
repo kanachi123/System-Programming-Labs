@@ -1,3 +1,5 @@
+шпаргалка для тех у кого 32битная система и нет столько памяти в мозгу учить команды
+
 # Перечитываем юзерские сервисы
 systemctl --user daemon-reload
 
@@ -9,3 +11,48 @@ systemctl --user status monitor.service
 
 # Включаем автозапуск при входе в сессию
 systemctl --user enable monitor.service
+
+
+# Логи stdout
+tail -f ~/my_service/logs/info.log
+
+# Логи ошибок
+tail -f ~/my_service/logs/err.log
+
+# Остановить
+systemctl --user stop monitor.service
+
+# Отключить автозапуск
+systemctl --user disable monitor.service
+
+# Перечитать конфиги
+systemctl --user daemon-reload
+
+# Запустить сервис
+systemctl --user start monitor.service
+
+# Проверить статус
+systemctl --user status monitor.service
+
+# Включить автозапуск
+systemctl --user enable monitor.service
+
+# Остановить сервис
+systemctl --user stop monitor.service
+
+# Отключить автозапуск
+systemctl --user disable monitor.service
+
+# Все процессы
+ps aux
+
+# Поиск процесса
+ps aux | grep python
+
+# Убить процесс
+kill <PID>
+pkill -f monitor.py
+
+# Смотреть лог в реальном времени
+tail -f logs/info.log
+tail -f logs/err.log
