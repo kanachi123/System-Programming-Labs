@@ -1,0 +1,15 @@
+[Unit]
+Description=Python Monitor Service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/toxoplasma/my_service
+ExecStart=/usr/bin/python3 /home/toxoplasma/my_service/monitor.py
+Restart=always
+RestartSec=5
+StandardOutput=append:/home/toxoplasma/my_service/logs/info.log
+StandardError=append:/home/toxoplasma/my_service/logs/err.log
+
+[Install]
+WantedBy=default.target
