@@ -1,0 +1,11 @@
+# Перечитываем юзерские сервисы
+systemctl --user daemon-reload
+
+# Запускаем сервис сразу
+systemctl --user start monitor.service
+
+# Проверяем статус
+systemctl --user status monitor.service
+
+# Включаем автозапуск при входе в сессию
+systemctl --user enable monitor.service
